@@ -1,0 +1,195 @@
+th{
+    background-color: #fff;
+    text-align: center;
+    font-weight: 500;
+    font-size: 16px;
+    }
+    
+    td {
+        font-weight: 300;
+        font-size: 14px;
+    }
+    
+    .export-csv {
+        width: 165px;
+        height: 41px;
+        background-color: var(--ci, #FFF);
+    }
+    
+    .filter {
+        display: flex;
+        align-items: center;
+    }
+    
+    .filter input[type=text]{
+        /* background-color: red; */
+        margin-right: 15px;
+        border-radius: 5px;
+        height: 40px;
+        font-size: 18px;
+        width: 20%;
+    }
+
+    .filter .date-picker {
+       min-width: 70%;
+       display: fixed;
+    }
+    
+    .label ul{
+        display: flex;
+    
+    }
+    
+    .container {
+        border: 0.8px solid rgba(0, 0, 0, 0.20);
+    }
+    
+
+    .label-filter label {
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    .table-frame {
+        border: 0.8px solid rgba(0, 0, 0, 0.20);
+        z-index: -1000;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+
+    .table {
+        z-index: -1000;
+    }
+
+    .form-group {
+        /* z-index: 10000; */
+    }
+    
+    .table-frame {
+        background-color: #FFF;
+    }
+
+    .table-frame select {
+        width: 90px;
+        border-radius: 10px;
+        font-size: 12px;
+        border: 0.5px solid #00000033;
+    }
+
+    .table-frame label {
+        font-size: 13px;
+        margin-left: 5px;
+    }
+
+    label:not(.form-check-label):not(.custom-file-label) {
+        font-weight: 500;
+    }
+
+    .selected-entries {
+        margin-left: 20px;
+        padding-bottom: 20px;
+    }
+
+    .row p {
+        font-size: 12px;
+        margin-left: 20px;
+    }
+
+    tr th {
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    .form-group .btn {
+        margin-right: 30px;
+        min-width: 80px;
+        padding: 10px;
+    }
+
+    .csv{
+        width: 165px;
+        height: 41px;
+        border-radius: 7px;
+        border: 0.4px solid rgba(0, 0, 0, 0.20);
+        background: var(--Ci, #FFF);
+    }
+
+    .filter label {
+    
+      transform-origin: top left;
+      transition: all 0.2s ease-out;
+    }
+    
+    .filter:focus-within label {
+      transform: translate(0, 12px) scale(0.75);
+    }
+
+    .action {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .online {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+
+    /* CSS for green and red circles */
+.status-cell {
+    text-align: center;
+    padding: 0; /* Remove padding to align the circle */
+  }
+  
+  .green-circle {
+    width: 10px;
+    height: 10px;
+    background-color: green;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .red-circle {
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .btn.add {
+    background-color: #3579f6;
+    color: white;
+    margin-top: 20px;
+  }
+
+  .btn.btn-success{
+    margin-top: 20px;
+  }
+
+  .btn.add:hover {
+    background-color: #1A56DB;
+  }
+
+  .selected-entries {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .global {
+    margin-right: 100px;
+    border-radius: 5px;
+  }
+
+  .download {
+    margin-left: 10px;
+  }
+
+  .paginate {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }

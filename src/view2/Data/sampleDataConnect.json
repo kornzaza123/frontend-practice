@@ -1,0 +1,194 @@
+{
+  "rows": [
+    {
+      "monitor_name": "CO Detector C",
+      "monitor_id": "538135",
+      "frequency_api": 20,
+      "status": 1,
+      "location": "Home",
+      "date": "05/09/2023 , 12:46 น.",
+      "monitor_detail": "Detects carbon monoxide levels",
+      "remark": "Replace battery"
+    },
+    {
+      "monitor_name": "Temperature Sensor A",
+      "monitor_id": "789527",
+      "frequency_api": 5,
+      "status": 0,
+      "location": "Lab 101",
+      "date": "14/08/2023 , 12:46 น.",
+      "monitor_detail": "Measures ambient temperature",
+      "remark": "Calibration needed"
+    },
+    {
+      "monitor_name": "Pressure Gauge 1",
+      "monitor_id": "138453",
+      "frequency_api": 15,
+      "status": 1,
+      "location": "Production Area",
+      "date": "15/08/2023 , 12:46 น.",
+      "monitor_detail": "Monitors system pressure",
+      "remark": ""
+    },
+    {
+      "monitor_name": "Humidity Sensor B",
+      "monitor_id": "981035",
+      "frequency_api": 8,
+      "status": 0,
+      "location": "Storage Room",
+      "date": "20/08/2023 , 12:46 น.",
+      "monitor_detail": "Measures humidity levels",
+      "remark": "Replace battery"
+    },
+    {
+      "monitor_name": "Vibration Analyzer X",
+      "monitor_id": "123456",
+      "frequency_api": 30,
+      "status": 0,
+      "location": "Machine Shop",
+      "date": "21/08/2023 , 12:46 น.",
+      "monitor_detail": "Detects machine vibrations",
+      "remark": "Scheduled maintenance"
+    },
+    {
+      "monitor_name": "Light Intensity Meter 1",
+      "monitor_id": "753893",
+      "frequency_api": 12,
+      "status": 1,
+      "location": "Greenhouse",
+      "date": "22/08/2023 , 12:46 น.",
+      "monitor_detail": "Measures sunlight intensity",
+      "remark": ""
+    },
+    {
+      "monitor_name": "Gas Detector C",
+      "monitor_id": "120368",
+      "frequency_api": 24,
+      "status": 1,
+      "location": "Chemical Lab",
+      "date": "23/08/2023 , 12:46 น.",
+      "monitor_detail": "Detects toxic gases",
+      "remark": "Replace sensor"
+    },
+    {
+      "monitor_name": "pH Sensor 2",
+      "monitor_id": "111205",
+      "frequency_api": 10,
+      "status": 1,
+      "location": "Water Treatment Plant",
+      "date": "24/08/2023 , 12:46 น.",
+      "monitor_detail": "Measures water acidity",
+      "remark": "Calibration in progress"
+    },
+    {
+      "monitor_name": "Motion Detector M",
+      "monitor_id": "222222",
+      "frequency_api": 18,
+      "status": 1,
+      "location": "Security Office",
+      "date": "25/08/2023 , 12:46 น.",
+      "monitor_detail": "Detects movement in restricted areas",
+      "remark": ""
+    },
+    {
+      "monitor_name": "CO2 Emission Monitor",
+      "monitor_id": "684289",
+      "frequency_api": 6,
+      "status": 0,
+      "location": "Factory Floor",
+      "date": "26/08/2023 , 12:46 น.",
+      "monitor_detail": "Monitors carbon dioxide emissions",
+      "remark": "Alert threshold lowered"
+    },
+    {
+      "monitor_name": "Sound Level Sensor 3",
+      "monitor_id": "987654",
+      "frequency_api": 20,
+      "status": 1,
+      "location": "Recording Studio",
+      "date": "27/08/2023 , 12:46 น.",
+      "monitor_detail": "Measures ambient noise levels",
+      "remark": ""
+    },
+    {
+      "monitor_name": "Voltage Analyzer V",
+      "monitor_id": "725682",
+      "frequency_api": 10,
+      "status": 1,
+      "location": "Electrical Room",
+      "date": "28/08/2023 , 12:46 น.",
+      "monitor_detail": "Monitors voltage fluctuations",
+      "remark": "Scheduled maintenance"
+    },
+    {
+      "monitor_name": "Air Quality Probe Q",
+      "monitor_id": "378962",
+      "frequency_api": 8,
+      "status": 1,
+      "location": "Urban Area",
+      "date": "29/08/2023 , 12:46 น.",
+      "monitor_detail": "Measures pollutants in the air",
+      "remark": "Data spike observed"
+    },
+    {
+      "monitor_name": "Magnetic Field Sensor",
+      "monitor_id": "127896",
+      "frequency_api": 15,
+      "status": 0,
+      "location": "Research Lab",
+      "date": "30/08/2023 , 12:46 น.",
+      "monitor_detail": "Measures magnetic field strength",
+      "remark": ""
+    },
+    {
+      "monitor_name": "Distance Measurement Device",
+      "monitor_id": "555555",
+      "frequency_api": 12,
+      "status": 1,
+      "location": "Warehouse",
+      "date": "31/08/2023 , 12:46 น.",
+      "monitor_detail": "Measures object distance",
+      "remark": "Calibration required"
+    },
+    {
+      "monitor_name": "Rainfall Sensor R",
+      "monitor_id": "721869",
+      "frequency_api": 24,
+      "status": 1,
+      "location": "Meteorological Station",
+      "date": "01/09/2023 , 12:46 น.",
+      "monitor_detail": "Measures precipitation levels",
+      "remark": ""
+    },
+    {
+      "monitor_name": "Soil Moisture Probe",
+      "monitor_id": "752786",
+      "frequency_api": 10,
+      "status": 0,
+      "location": "Agricultural Field",
+      "date": "02/09/2023 , 12:46 น.",
+      "monitor_detail": "Measures soil moisture content",
+      "remark": "Low battery warning"
+    },
+    {
+      "monitor_name": "Radiation Detector 1",
+      "monitor_id": "123872",
+      "frequency_api": 18,
+      "status": 1,
+      "location": "Nuclear Facility",
+      "date": "03/09/2023 , 12:46 น.",
+      "monitor_detail": "Detects ionizing radiation",
+      "remark": ""
+    },
+    {
+      "monitor_name": "Wind Speed Sensor",
+      "monitor_id": "786423",
+      "frequency_api": 6,
+      "status": 0,
+      "location": "Wind Farm",
+      "date": "04/09/2023 , 12:46 น.",
+      "monitor_detail": "Measures wind speed and direction",
+      "remark": "Antenna adjustment"
+    }
+  ]
+}
