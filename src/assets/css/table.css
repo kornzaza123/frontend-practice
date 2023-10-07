@@ -22,7 +22,6 @@ th{
     }
     
     .filter input[type=text]{
-        /* background-color: red; */
         margin-right: 15px;
         border-radius: 5px;
         height: 40px;
@@ -52,6 +51,7 @@ th{
 
     .table-frame {
         border: 0.8px solid rgba(0, 0, 0, 0.20);
+        border-radius: 5px;
         z-index: -1000;
         padding-bottom: 20px;
         margin-bottom: 20px;
@@ -193,3 +193,32 @@ th{
     width: 100%;
     justify-content: center;
   }
+
+  /* ----------------------------------------------------------------------- */
+  .filter select{
+    margin-right: 15px;
+    border-radius: 5px;
+    height: 40px;
+    font-size: 18px;
+    width: 20%;
+}
+
+.form-group .btnSearchn {
+  margin-left: 18px;
+  margin-right: 17px;
+  min-width: 80px;
+  border-radius: 5px;
+  width: 15%;
+  height: 43px
+}
+.form-group .btnClear{
+  min-width: 80px;
+  border-radius: 5px;
+  width: 15%;
+  height: 43px
+}
+.global-search{
+  margin-top: 30px;
+  margin-right: 100px;
+  border-radius: 5px;
+}

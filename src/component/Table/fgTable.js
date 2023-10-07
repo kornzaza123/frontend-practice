@@ -10,7 +10,7 @@ import { faDownload } from '@fortawesome/free-solid-svg-icons'
 
 function FGInOutTable(params) {
   
-  const rowsData = params.data.rows;
+  const rowsData = params.data;
 
   console.log(rowsData);
 
@@ -18,6 +18,10 @@ function FGInOutTable(params) {
   const [searchName, setSearchName] = useState("");
   const [searchDate, setSearchDate] = useState("");
   const [globalSearch, setGlobalSearch] = useState("");
+
+  // ประกาศเพิ่มต้องนี้
+  // const [searchNo,setSearchNo] = useState("");
+  // const [searchCategory,setSearchCategory]= useState("");
 
   const [this_page, setthis_page] = useState({ page: 1 });
   const [show_entries, setshow_entries] = useState({ entries: 10 });
@@ -184,7 +188,7 @@ function FGInOutTable(params) {
             matchDate = el.ihs_timestamp.toLowerCase().includes(formattedDate.toLowerCase());
           }
   
-          return matchID && matchName && matchDate;
+          return matchName;
         });
   
         setFilteredData(filteredRows);
@@ -221,7 +225,7 @@ function FGInOutTable(params) {
             matchDate = el.ihs_timestamp.toLowerCase().includes(formattedDate.toLowerCase());
           }
     
-          return matchID && matchName && matchDate;
+          return matchName;
         });
     
         setFilteredData(filteredRows);
@@ -231,10 +235,13 @@ function FGInOutTable(params) {
     const clearSearchData = () => {
       setSearchID("");
       setSearchName("");
-    //   setSearchDate("");
+      setSearchDate("");
       setPage(1);
       setshow_entries({ entries: 10 });
       setFilteredData(rowsData);
+
+      // setSearchNo("");
+      // setSearchCategory("");
     };
   
     var BN = 0;
@@ -300,12 +307,14 @@ function FGInOutTable(params) {
   
   const totalPageCount = Math.ceil(filteredData.length / show_entries.entries);
 
+// =============================================================================================================================
+
   return (
     <div>
       <div class="col-10">
         <div className="label-filter">
           <label>Product No</label>
-          <label className="ml-[13%]">Product Name</label>
+          <label className="ml-[14.5%]">Product Name</label>
           <label className="ml-[15%]">Model Category</label>
         </div>
         <div class="form-group">
@@ -318,19 +327,26 @@ function FGInOutTable(params) {
               />
             <input
               type="text"
-              value={searchID}
-              onChange={(e) => setSearchID(e.target.value)}
+              value={searchName}
+              onChange={(e) => setSearchName(e.target.value)}
             />  
             {/* <span class="input-group-text" id="basic-addon1">@</span> */}
-            <DatePicker   
+            {/* <DatePicker   
               className="date-picker"
               dateFormat="dd/MM/yyyy" // Set the desired date format
               selected={searchDate}
               onChange={(date) => setSearchDate(date)}
-            />  
+            />   */}
+            <select id="dropdown">
+            {/* <option value=""></option> */}
+            <option hidden disabled selected value ></option>
+            <option value="banana">Banana</option>
+            <option value="cherry">Cherry</option>
+            <option value="orange">Orange</option>
+            </select>
             <button
               type="button" // This will trigger the form submission
-              className="btn btn-primary"
+              className="btnSearchn btn-primary"
               onClick={handleSearchClick}
             >
               Search
@@ -338,7 +354,7 @@ function FGInOutTable(params) {
 
             <button
               type="button" // This will trigger the form submission
-              className="btn btn-outline-dark"
+              className="btnClear btn-outline-dark"
               onClick={clearSearchData}
             >
               Clear
@@ -346,11 +362,10 @@ function FGInOutTable(params) {
               </div>
                 
             </form>
-
-            
-      
         </div>
       </div>
+
+{/* ============================================================================================================ */}
 
       <div className="table-frame">
         <div className="selected-entries">
@@ -366,14 +381,16 @@ function FGInOutTable(params) {
                 <option value={20}>20</option>
                 <option value={50}>50</option>
                 <option value={100}>100</option>
-                <option value={rowsData.length}>{rowsData.length} (ALL)</option>
+                {/* <option value={rowsData.length}>{rowsData.length} (ALL)</option> */}
             </select>
           </div>
           
+          <button className="popup" >Pop up</button>
+
           <form>
           <input
             type="text"
-            className="global"
+            className="global-search"
             placeholder="Search..."
             value={globalSearch}
             onChange={(e) => setGlobalSearch(e.target.value)}
@@ -397,7 +414,7 @@ function FGInOutTable(params) {
               <th>Product Name</th>
               <th>Model Category</th>
               <th>Amount</th>
-              <th>Manatement</th>
+              <th>Management</th>
 
               {/* <th>Voltage (V)</th>
               <th>Current (A)</th>
@@ -416,11 +433,13 @@ function FGInOutTable(params) {
                 return (
                   <tr key={dataIndex}>
                     <td style={{ textAlign: "center" }}>{dataIndex + 1}</td>
-                    <td style={{ textAlign: "center" }}>{el.ims_name}</td>
+                    
+                    {/* <td style={{ textAlign: "center" }}>{el.ims_name}</td>
                     <td style={{ textAlign: "center" }}>{el.ims_monitor_id}</td>
                     <td style={{ textAlign: "center" }}>{el.ims_frequency_api}</td>
                     <td style={{ textAlign: "center" }}>{el.ihs_power}</td>
-                    <td style={{ textAlign: "center" }}>{el.ihs_energy}</td>
+                    <td style={{ textAlign: "center" }}>{el.ihs_energy}</td> */}
+
                     {/* <td style={{ textAlign: "center" }}>{el.ihs_voltage}</td>
                     <td style={{ textAlign: "center" }}>{el.ihs_current}</td>
                     <td style={{ textAlign: "center" }}>{el.ihs_frequency}</td> */}
@@ -448,7 +467,7 @@ function FGInOutTable(params) {
               <th>Product Name</th>
               <th>Model Category</th>
               <th>Amount</th>
-              <th>Manatement</th>
+              <th>Management</th>
               {/* <th>Voltage (V)</th>
               <th>Current (A)</th>
               <th>Frequency (Hz)</th>

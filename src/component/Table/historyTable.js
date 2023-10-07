@@ -10,7 +10,7 @@ import { faDownload } from '@fortawesome/free-solid-svg-icons'
 
 function HistoryTable(params) {
   
-  const rowsData = params.data.rows;
+  const rowsData = params.data;
 
   console.log(rowsData);
 

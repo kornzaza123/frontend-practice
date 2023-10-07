@@ -4,7 +4,9 @@ import Sidebar from "../component/Sidebar";
 import Footter from "../component/Footter";
 import "../assets/css/Content.css";
 import "../assets/css/LandingPage.css";
-import Monitor_title from '../assets/img/Dashboard/Vector.svg';
+
+
+import Monitor_title from '../assets/img/Dashboard/FG.svg';
 import HistoryTable from  "../component/Table/historyTable";
 import sampleDataHistory from "./Data/sampleDataHistory.json";
 import Oem from "../component/OEM";
@@ -57,6 +59,8 @@ function FGInOut(params) {
 
   var config_his = {
     method: 'GET',
+
+    // แก้ตัวนี้ด้วย
     url: 'http://150.95.25.8:6682/historyPowerMonitor',
     headers: {
       Authorization: getToken(),
@@ -108,9 +112,13 @@ function FGInOut(params) {
       <div className="container-fluid">
           <div className="row mb-2">
             <div className="col-sm-6">
+              
               <div className="monitor_title">
-                <img src={Monitor_title} alt="" />
-                <div className="title"><h1>F/G <span>In-Out</span></h1></div>
+
+                
+                <img src={Monitor_title} alt="" />  
+
+                <div className="title"><h1>F/G In-Out</h1></div>
               </div>
             </div>
             <div className="col-sm-6">
