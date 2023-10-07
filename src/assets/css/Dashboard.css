@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.overview {
+    margin-bottom: 10px;
+}
+.monitor_title {
+    display: flex;
+}
+
+.monitor_title .title{
+    margin-left: 15px;
+    white-space: nowrap;
+}
+
+.monitor_title .title h1{
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.monitor_title .title span{
+    background: linear-gradient(180deg, #4E67EB 0%, #F0F4FF 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.date-display p {
+    color: #112A46;
+}
+
+.card-title{
+    font-size: 16px;
+    color: #112A46;
+    font-weight: 400;
+    opacity: 0.6;
+}
+
+.card-value {
+    font-size: 30px;
+    font-weight: 300;
+}
+
+.monitor_card {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.card-image {
+    width: 35px;
+}
+
+.card-image-little {
+    width: 50px;
+}
+
+.card-monitor {
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+
+}
+
+.multi-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 200px;
+    font-size: 15px;
+    font-weight: 300;
+
+}
+
+.multi-button button {
+    flex: 1;
+    position: relative;
+    padding: 4px 2px;
+    border: 1px solid #ABACAE;
+
+    letter-spacing: 1px;
+    color: #ABACAE;
+    background: transparent;
+    overflow: hidden;
+    font-weight: 400;
+}
+
+.multi-button button.first {
+    border-radius: 5px 0px 0px 5px;
+    background-color: #3579F6;
+    color: #fff;
+}
+
+.multi-button button.third {
+    border-radius: 0px 5px 5px 0px;
+}
+
+.multi-button button:hover {
+    color: #fff;
+    transition: 0.2s ease-in-out;
+    background-color: #3579F6;
+}
+
+
+
+
+@media only screen and (max-width: 1410px) {
+    .card-value {
+        font-size: 40px;     
+    }
+    .card-title{
+        font-size: 15px;        
+    }
+}
+
+@media only screen and (max-width: 1260px) {
+    .card-value {
+        font-size: 30px;
+        
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .card-value {
+        font-size: 25px;
+        
+    }
+}
+
+@media only screen and (max-width: 1023px) {
+    .card-value {
+        font-size: 50px;
+        
+    }
+}
+
+.chart {
+    margin-top: 20px;
+}
+
+.circle {
+    height: 12px;
+    width: 12px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.monitor-list-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 250px;
+}
+
+.monitor-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 180px;
+}
+
+.listt .monitor-list {
+    margin-top: 4px;
+}
+
+.list-value {
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.monitor-list p, .monitor-list-main p{
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.monitor-list-main p {
+    margin-right: 90px;
+}
+
+.listt {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 2px;
+}
+
+
+.card-list-main {
+    width: max-content;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 120px;
+}
+
+.card-list{
+    width: max-content;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.title-chart{
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.title-chart h2{
+    font-size: 21px;
+    font-weight: 500;
+}
+
+.title-chart p{
+    font-weight: 300;
+    font-size: 14px;
+    color: #C8CACF;
+}
+
+.card-header {
+    margin-left: -5rem;
+    flex-direction: column;
+    color: rgba(0, 0, 0, 0.50);;
+}
+
+.card-headers h2{
+    font-size: 16px;
+}
+
+.title-type {
+    font-weight: 400;
+    font-size: 1.5rem;
+    justify-content: space-between;
+    margin-left: 5px;
+    margin-bottom: 10px;
+}
+
+.title-type h2 {
+    margin-left: 5px;
+}
+
+.card-headers {
+    --tw-border-opacity: 1;
+    border-color: rgba(0, 0, 0, 0.30);
+    border-bottom-width: 1px;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    padding-top: 0.25rem/* 8px */;
+    padding-bottom: 0.25rem/* 8px */;
+    padding-right: 0.75rem/* 12px */;
+    flex-direction: column;
+}
+
+.content {
+    font-family: 'Kanit', sans-serif;
+
+}
+
+.form-frame {
+    width: 150%;
+}
+
+.time-title {
+    font-size: 12px;
+    font-weight: 50;
+    display: flex;
+    justify-content: center;
+    width: 210%;
+    padding-bottom: 1px;
+    font-family: sans-serif;
+    /* margin-bottom: 20px; */
+}
+
+.chart-title {
+    font-size: 12px;
+    font-weight: 50;
+    font-family: sans-serif;
+}

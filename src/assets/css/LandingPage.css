@@ -1,0 +1,9 @@
+.card-title{
+    font-weight: bold;
+}
+.blank-space {
+    margin-right:0.4rem;
+}
+#webpack-dev-server-client-overlay{
+display: none !important;
+}
