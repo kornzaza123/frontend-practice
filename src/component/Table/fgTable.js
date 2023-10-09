@@ -500,8 +500,8 @@ function FGInOutTable(params) {
                     <td className="action" style={{ textAlign: "center" }}>
                       <img
                         src={edit}
-                        alt="Delete"
-                        className="delete-icon"
+                        alt="edit"
+                        className="edit-icon"
                         onClick={() => handleRowActionClick(el)}
                       />
                     </td>
