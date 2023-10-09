@@ -24,6 +24,7 @@ import {
   Icon_Choose,
 } from "../routes/imgRoute/imgUrl";
 import FGInOutTable from "../component/Table/fgTable";
+import sampleData from "./Data/sampleDataConnect.json"
 
 function FGInOut(params) {
   const [his, setHis] = useState(null); // Initialize as null
@@ -135,10 +136,10 @@ function FGInOut(params) {
       <section className="content">
         
         <div className="container-fluid">
-          {his === null ? (
+          {sampleData === null ? (
             <p></p>
           ) : (
-            <FGInOutTable data={his} allpage={true} />
+            <FGInOutTable data={sampleData} allpage={true} />
           )}
 
           

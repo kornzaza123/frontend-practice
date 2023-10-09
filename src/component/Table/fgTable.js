@@ -1,16 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { MDBTable, MDBTableBody, MDBTableHead } from "mdbreact";
+import eye from '../../assets/img/Dashboard/eye.svg';
+import edit from '../../assets/img/Dashboard/edit.svg';
+import deletes from '../../assets/img/Dashboard/delete.svg';
 import "../../assets/css/table.css";
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css'; // Import the default styles
 import { CSVLink } from 'react-csv';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDownload } from '@fortawesome/free-solid-svg-icons'
+import 'flowbite';
 
+import Modal from '../Modal';
+import '../Modal.css';
 
 function FGInOutTable(params) {
   
-  const rowsData = params.data;
+  const rowsData = params.data.rows;
 
   console.log(rowsData);
 
@@ -139,22 +145,6 @@ function FGInOutTable(params) {
   
     // Add these states to your component
     const [filteredData, setFilteredData] = useState(rowsData);
-  
-    const prepareDataForCSV = () => {
-      const csvData = filteredData.map((el) => ({
-        'Monitor Name': el.ims_name,
-        'Monitor ID': el.ims_monitor_id,
-        'Frequency API (minute)': el.ims_frequency_api,
-        'ihs_power (W)': el.ihs_power,
-        'ihs_energy (kWh)': el.ihs_energy,
-        'Voltage (V)': el.ihs_voltage,
-        'Current (A)': el.ihs_current,
-        'Frequency (Hz)': el.ihs_frequency,
-        'Add Date': el.ihs_timestamp,
-      }));
-    
-      return csvData;
-    };
 
     useEffect(() => {
       // Filter the data based on the global search
@@ -307,10 +297,73 @@ function FGInOutTable(params) {
   
   const totalPageCount = Math.ceil(filteredData.length / show_entries.entries);
 
+  // function modal () {
+  //   return (
+  //     <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+  //       <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+  //       <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+  //         <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+  //           <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+  //             <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+  //               <div class="sm:flex sm:items-start">
+  //                 <div class="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
+  //                   <svg class="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+  //                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+  //                   </svg>
+  //                 </div>
+  //                 <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+  //                   <h3 class="text-base font-semibold leading-6 text-gray-900" id="modal-title">Deactivate account</h3>
+  //                   <div class="mt-2">
+  //                     <p class="text-sm text-gray-500">Are you sure you want to deactivate your account? All of your data will be permanently removed. This action cannot be undone.</p>
+  //                   </div>
+  //                 </div>
+  //               </div>
+  //             </div>
+  //             <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+  //               <button type="button" class="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto">Deactivate</button>
+  //               <button type="button" class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto">Cancel</button>
+  //             </div>
+  //           </div>
+  //         </div>
+  //       </div>
+  //     </div>
+  //   );
+  // }
+
 // =============================================================================================================================
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const [selectedRowData, setSelectedRowData] = useState(null);
+
+  const handleRowActionClick = (rowData) => {
+    setSelectedRowData(rowData);
+    console.log(rowData)
+    setIsModalOpen(true);
+    return <Modal isOpen={isModalOpen} closeModal={closeModal} content="dasdasd" />;
+  };
+
+  const renderModal = () => {
+    if (selectedRowData) {
+      return (
+        <Modal isOpen={isModalOpen} closeModal={closeModal} content={selectedRowData} />
+      );
+    }
+    return null;
+  };
 
   return (
     <div>
+      
+      
       <div class="col-10">
         <div className="label-filter">
           <label>Product No</label>
@@ -430,35 +483,32 @@ function FGInOutTable(params) {
                 BN = startIndex + 1;
                 FN = endIndex;
                 const dataIndex = (this_page.page - 1) * show_entries.entries + index;
+                const id = el.ims_monitor_id;
+                console.log(id)
                 return (
+                  
                   <tr key={dataIndex}>
+                    
                     <td style={{ textAlign: "center" }}>{dataIndex + 1}</td>
-                    
-                    {/* <td style={{ textAlign: "center" }}>{el.ims_name}</td>
-                    <td style={{ textAlign: "center" }}>{el.ims_monitor_id}</td>
-                    <td style={{ textAlign: "center" }}>{el.ims_frequency_api}</td>
-                    <td style={{ textAlign: "center" }}>{el.ihs_power}</td>
-                    <td style={{ textAlign: "center" }}>{el.ihs_energy}</td> */}
-
-                    {/* <td style={{ textAlign: "center" }}>{el.ihs_voltage}</td>
-                    <td style={{ textAlign: "center" }}>{el.ihs_current}</td>
-                    <td style={{ textAlign: "center" }}>{el.ihs_frequency}</td> */}
-
-                    {/* <td style={{ textAlign: "center" }}>{el.ihs_timestamp}</td> */}
-                    
-                    {/* <td style={{ textAlign: "center" }}>{dataIndex + 1}</td>
-                    <td style={{ textAlign: "center" }}>{el.monitor_name}</td>
                     <td style={{ textAlign: "center" }}>{el.monitor_id}</td>
+                    <td style={{ textAlign: "center" }}>{el.monitor_name}</td>
+                    <td style={{ textAlign: "center" }}>{el.monitor_detail}</td>
                     <td style={{ textAlign: "center" }}>{el.frequency_api}</td>
-                    <td style={{ textAlign: "center" }}>{el.power}</td>
-                    <td style={{ textAlign: "center" }}>{el.energy}</td>
-                    <td style={{ textAlign: "center" }}>{el.voltage}</td>
-                    <td style={{ textAlign: "center" }}>{el.current}</td>
-                    <td style={{ textAlign: "center" }}>{el.frequency}</td>
-                    <td style={{ textAlign: "center" }}>{el.date}</td> */}
+        
+                    {/* <Modal isOpen={isModalOpen} closeModal={closeModal} content="dasdasd" /> */}
+                    {/* <Modal isOpen={isModalOpen} closeModal={closeModal} content={el.monitor_id} /> */}
+                    <td className="action" style={{ textAlign: "center" }}>
+                      <img
+                        src={edit}
+                        alt="Delete"
+                        className="delete-icon"
+                        onClick={() => handleRowActionClick(el)}
+                      />
+                    </td>
                   </tr>
                 );
               })}
+              {renderModal()}
           </MDBTableBody>
           <MDBTableHead>
             <tr>
